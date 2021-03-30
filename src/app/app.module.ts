@@ -4,6 +4,8 @@ import localeFr from '@angular/common/locales/fr';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
+import {AccordionModule} from 'primeng/accordion';
+import {MenuItem} from 'primeng/api';
 import {LoginComponent} from './login/login.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {ReactiveFormsModule} from '@angular/forms';
@@ -14,18 +16,23 @@ import {MessageService} from 'primeng/api';
 import {registerLocaleData} from '@angular/common';
 import {MomentModule} from 'ngx-moment';
 import 'moment/locale/fr';
+import {MenuModule} from 'primeng/menu';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {JwtInterceptorService} from './_services/jwt-interceptor.service';
 import { ProfileComponent } from './profile/profile.component';
 import {UserService} from './_services/user.service';
 import { LpSolverTestComponent } from './lp-solver-test/lp-solver-test.component';
 import {MarkdownModule} from 'ngx-markdown';
+import { ListeJeuxComponent } from './liste-jeux/liste-jeux.component';
 import { DetailJeuComponent } from './detail-jeu/detail-jeu.component';
-import {AccordionModule} from 'primeng/accordion';
-import {MenuModule} from 'primeng/menu';
 import {CardModule} from 'primeng/card';
 import {ButtonModule} from 'primeng/button';
-import {TableModule} from "primeng/table";
+import {TableModule} from 'primeng/table';
+import {RatingModule} from 'primeng/rating';
+
+import {TabMenuModule} from 'primeng/tabmenu';
+import { RegisterComponent } from './register/register.component';
+
 
 registerLocaleData(localeFr, 'fr');
 
@@ -35,7 +42,9 @@ registerLocaleData(localeFr, 'fr');
     LoginComponent,
     ProfileComponent,
     LpSolverTestComponent,
-    DetailJeuComponent
+    ListeJeuxComponent,
+    DetailJeuComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -46,12 +55,17 @@ registerLocaleData(localeFr, 'fr');
     MessagesModule,
     ToastModule,
     HttpClientModule,
-    ReactiveFormsModule,
     AccordionModule,
-    MenuModule,
     CardModule,
     ButtonModule,
-    TableModule
+    TableModule,
+    ReactiveFormsModule,
+    TableModule,
+    CardModule,
+    RatingModule,
+    ButtonModule,
+    MenuModule,
+    TabMenuModule
   ],
   providers: [AuthentificationService, MessageService,
     {provide: LOCALE_ID, useValue: 'fr-FR'},
