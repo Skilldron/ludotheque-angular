@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import * as moment from 'moment';
 import {MenuItem, MessageService} from 'primeng/api';
 import {AuthentificationService} from './_services/authentification.service';
+import {Router} from '@angular/router';
 
 
 // @ts-ignore
@@ -14,7 +15,7 @@ export class AppComponent implements OnInit {
   title = 'ludotheque-client';
   items: MenuItem[];
 
-  constructor(public messageService: MessageService, public authService: AuthentificationService) {
+  constructor(public messageService: MessageService, public authService: AuthentificationService, private router: Router) {
   }
 
   show(): void {
@@ -28,6 +29,7 @@ export class AppComponent implements OnInit {
 
   logout(): void {
     this.authService.logout();
+    this.router.navigateByUrl('/login');
   }
 
   ngOnInit() {
@@ -35,14 +37,18 @@ export class AppComponent implements OnInit {
       if (login){
         this.items = [
           {label: 'Mafia', icon: 'pi pi-fw pi-home'},
-          {label: 'Connexion', icon: 'pi pi-fw pi-tag'},
-          {label: 'Inscription', icon: 'pi pi-fw pi-pencil'}
+          {label: 'Connexion', icon: 'pi pi-fw pi-tag', routerLink: 'login'},
+          {label: 'Inscription', icon: 'pi pi-fw pi-pencil'},
+          {label: 'Liste-jeux', icon: 'pi pi-fw pi-desktop', routerLink: 'liste-jeux/:id'}
+
         ];
       }else{
         this.items = [
-          {label: 'Mafia', icon: 'pi pi-fw pi-home'},
-          {label: 'Déconnexion', icon: 'pi pi-fw pi-times'},
-          {label: 'Profil', icon: 'pi pi-fw pi-user'}
+          {label: 'Mafia', icon: 'pi pi-fw pi-home', routerLink: 'login'},
+          {label: 'Déconnexion', icon: 'pi pi-fw pi-times', command: () => this.logout()},
+          {label: 'Profil', icon: 'pi pi-fw pi-user', routerLink: 'profile'},
+          {label: 'RO', icon: 'pi pi-fw pi-user', routerLink: 'ro'},
+          {label: 'Liste-jeux', icon: 'pi pi-fw pi-desktop', routerLink: 'liste-jeux/:id'}
         ];
       }
     }));
