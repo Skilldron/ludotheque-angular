@@ -10,6 +10,7 @@ import {noop, Observable, of} from 'rxjs';
 export class ListeJeuxComponent implements OnInit {
 
   jeux$: Observable<any[]>;
+  valTri = '';
 
   constructor(private jeuxService: JeuxService) {
   }
@@ -18,5 +19,9 @@ export class ListeJeuxComponent implements OnInit {
     const jeux = [];
     this.jeuxService.getJeux().subscribe(str => jeux.push(str), noop, () => this.jeux$ = of(jeux[0]));
     console.log(jeux);
+  }
+
+  onTri(): void {
+    this.jeux$ = this.jeuxService.getJeux(1);
   }
 }

@@ -22,8 +22,12 @@ export class JeuxService {
     );
   }
 
-  getJeux(): Observable<any> {
-    const url = 'http://localhost:8000/api/jeux';
+  getJeux(sort?: number): Observable<any> {
+    let params = '';
+    if (!!sort && sort === 1){
+      params = '?sort=nom&ordre=asc';
+    }
+    const url = `http://localhost:8000/api/jeux${params}`;
     return this.http.get<any>(url, this.httpOptions)
       .pipe(
         map(res => res.data.item),

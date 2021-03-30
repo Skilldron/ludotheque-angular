@@ -1,5 +1,6 @@
 <h1>Voici les différents jeux proposés</h1>
 
+<p-button class="bouton" icon="pi pi-sort-alpha-down" (click)="onTri()"></p-button>
 
 <div class="p-d-flex p-jc-center" appCardBorder *ngFor="let jeu of (jeux$ | async) ">
   <p-card>
