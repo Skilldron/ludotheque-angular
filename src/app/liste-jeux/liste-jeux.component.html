@@ -1,11 +1,11 @@
-<p>Voici les différents jeux proposés</p>
+<h1>Voici les différents jeux proposés</h1>
 
-<
+
 <div class="p-d-flex p-jc-center" appCardBorder *ngFor="let jeu of (jeux$ | async) ">
   <p-card>
     <div class="p-d-flex p-jc-center title">
       <i class="pi pi-calendar p-d-flex p-ai-center calendar"></i>
-      <span>{{jeu.nom}}</span>
+      <h1><span>{{jeu.nom}}</span></h1>
     </div>
     <div class="p-text-center body">
       <img class="p-shadow-2 image" [src]="jeu.url_media" alt="affiche darkknight"/>
@@ -13,9 +13,8 @@
       <div class="product-description">Durée :{{jeu.duree}}</div>
       <div class="product-description">Age minimum requis :{{jeu.age}}</div>
       <div class="product-description">Nombre de joueurs minimum :{{jeu.nombre_joueurs}}</div>
+      <p-button class="bouton" icon="pi pi-eye" [routerLink]="['/liste-jeux' , jeu.id]"></p-button>
     </div>
-    <div class="p-d-flex p-flex p-jc-between footer">
-      <p-button icon="pi pi-eye" [routerLink]="['/liste-jeux'/jeu.id]"></p-button>
-    </div>
+
   </p-card>
 </div>
