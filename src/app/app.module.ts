@@ -23,6 +23,7 @@ import {UserService} from './_services/user.service';
 import { LpSolverTestComponent } from './lp-solver-test/lp-solver-test.component';
 import {MarkdownModule} from 'ngx-markdown';
 import { ListeJeuxComponent } from './liste-jeux/liste-jeux.component';
+import { DetailJeuComponent } from './detail-jeu/detail-jeu.component';
 
 registerLocaleData(localeFr, 'fr');
 
@@ -32,7 +33,8 @@ registerLocaleData(localeFr, 'fr');
     LoginComponent,
     ProfileComponent,
     LpSolverTestComponent,
-    ListeJeuxComponent
+    ListeJeuxComponent,
+    DetailJeuComponent
   ],
   imports: [
     BrowserModule,
@@ -46,6 +48,7 @@ registerLocaleData(localeFr, 'fr');
     AccordionModule,
     MenuModule,
     ReactiveFormsModule
+
   ],
   providers: [AuthentificationService, MessageService,
     {provide: LOCALE_ID, useValue: 'fr-FR'},
