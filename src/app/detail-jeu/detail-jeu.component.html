@@ -1,1 +1,16 @@
-<p>detail-jeu works!</p>
+<h1 class="p-text-center">Details du jeu</h1>
+
+<div *ngIf="(jeu$ | async) as jeu">
+  <h3 class="p-text-center">{{jeu.nom}}</h3>
+  <img class="tImage p-text-center" src="{{jeu.url_media}}" alt="image du jeu">
+  <p><b>Description :</b> {{jeu.description}}</p>
+  <p><b>Thème :</b> {{jeu.theme_id.nom}}</p>
+  <p><b>Règles : </b>{{jeu.regles}}</p>
+  <p><b>Catégorie :</b> {{jeu.categorie}}</p>
+  <p><b>Langue :</b> {{jeu.langue}}</p>
+  <p><b>Éditeur : </b>{{jeu.editeur_id.nom}}</p>
+  <p><b>Nombre de joueur :</b> {{jeu.nombre_joueurs}}</p>
+  <p><b>Age : </b>{{jeu.age}}</p>
+  <p><b>Poids : </b>{{jeu.poids}}</p>
+  <p><b>Durée : </b>{{jeu.duree}}</p>
+</div>

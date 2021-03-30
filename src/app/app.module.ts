@@ -23,6 +23,9 @@ import {MarkdownModule} from 'ngx-markdown';
 import { DetailJeuComponent } from './detail-jeu/detail-jeu.component';
 import {AccordionModule} from 'primeng/accordion';
 import {MenuModule} from 'primeng/menu';
+import {CardModule} from 'primeng/card';
+import {ButtonModule} from 'primeng/button';
+import {TableModule} from "primeng/table";
 
 registerLocaleData(localeFr, 'fr');
 
@@ -45,7 +48,10 @@ registerLocaleData(localeFr, 'fr');
     HttpClientModule,
     ReactiveFormsModule,
     AccordionModule,
-    MenuModule
+    MenuModule,
+    CardModule,
+    ButtonModule,
+    TableModule
   ],
   providers: [AuthentificationService, MessageService,
     {provide: LOCALE_ID, useValue: 'fr-FR'},
