@@ -63,7 +63,7 @@ Icon
 .Trashes
 .VolumeIcon.icns
 .com.apple.timemachine.donotpresent
-
+ "node_modules/bootstrap/dist/css/bootstrap.min.css",
 # Directories potentially created on remote AFP share
 .AppleDB
 .AppleDesktop
@@ -250,3 +250,6 @@ local.properties
 # Typically, this file would be tracked if it contains build/dependency configurations:
 #.project
 
+package.json
+package-lock.json
+angular.json
