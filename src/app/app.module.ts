@@ -30,6 +30,7 @@ import {CardModule} from 'primeng/card';
 import {RatingModule} from 'primeng/rating';
 import {ButtonModule} from 'primeng/button';
 import {TabMenuModule} from 'primeng/tabmenu';
+import { RegisterComponent } from './register/register.component';
 
 
 registerLocaleData(localeFr, 'fr');
@@ -41,7 +42,8 @@ registerLocaleData(localeFr, 'fr');
     ProfileComponent,
     LpSolverTestComponent,
     ListeJeuxComponent,
-    DetailJeuComponent
+    DetailJeuComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

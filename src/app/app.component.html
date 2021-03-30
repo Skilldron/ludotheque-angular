@@ -1,7 +1,14 @@
 
 <p-tabMenu [model]="items"></p-tabMenu>
 
+<ul>
 
+  <li *ngIf="authService.isLoggedOut$ | async"><a [routerLink]="['/login']">Connexion</a></li>
+  <li *ngIf="authService.isLoggedIn$ | async"><a [routerLink]="['/profile']">Profil</a></li>
+  <li *ngIf="authService.isLoggedIn$ | async"><button (click)="logout()">Deconnexion</button></li>
+  <li *ngIf="authService.isLoggedOut$ | async"><a [routerLink]="['/register']">S'enregistrer</a></li>
+  <li><a [routerLink]="['/ro']">Exo RO</a></li>
+</ul>
 
 <p-toast position="top-right" key="main"></p-toast>
 
