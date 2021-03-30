@@ -4,6 +4,8 @@ import localeFr from '@angular/common/locales/fr';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
+import {AccordionModule} from 'primeng/accordion';
+import {MenuItem} from 'primeng/api';
 import {LoginComponent} from './login/login.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {ReactiveFormsModule} from '@angular/forms';
@@ -20,6 +22,10 @@ import { ProfileComponent } from './profile/profile.component';
 import {UserService} from './_services/user.service';
 import { LpSolverTestComponent } from './lp-solver-test/lp-solver-test.component';
 import {MarkdownModule} from 'ngx-markdown';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {MenuModule} from 'primeng/menu';
+import {TabMenuModule} from 'primeng/tabmenu';
+import {ButtonModule} from 'primeng/button';
 
 registerLocaleData(localeFr, 'fr');
 
@@ -39,7 +45,12 @@ registerLocaleData(localeFr, 'fr');
     MessagesModule,
     ToastModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule,
+    AccordionModule,
+    MenuModule,
+    TabMenuModule,
+    ButtonModule
   ],
   providers: [AuthentificationService, MessageService,
     {provide: LOCALE_ID, useValue: 'fr-FR'},
