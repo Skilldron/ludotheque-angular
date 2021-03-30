@@ -1,0 +1,9 @@
+<form [formGroup]="register" (ngSubmit)="onSubmit()">
+  Nom :<input type="text" formControlName="nom" /><br>
+  Prénom :<input type="text" formControlName="prenom" /><br>
+  Pseudo :<input type="text" formControlName="pseudo" /><br>
+  Email :<input type="text" formControlName="email" /><br>
+  Mot de passe :<input type="password" formControlName="password" />
+  Retapez votre mot-de-passe :<input type="password" formControlName="confirmPass" />
+  <button [disabled]="!register.valid">S'enregistrer</button>
+</form>
