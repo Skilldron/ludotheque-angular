@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {JeuxService} from '../jeux.service';
+import {noop, Observable, of} from 'rxjs';
 
 @Component({
   selector: 'app-liste-jeux',
@@ -7,11 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListeJeuxComponent implements OnInit {
 
+  jeux$: Observable<any[]>;
 
-
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private jeuxService: JeuxService) {
   }
 
+  ngOnInit(): void {
+    const jeux = [];
+    this.jeuxService.getJeux().subscribe(str => jeux.push(str), noop, () => this.jeux$ = of(jeux[0]));
+    console.log(jeux);
+  }
 }

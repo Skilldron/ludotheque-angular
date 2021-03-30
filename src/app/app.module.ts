@@ -24,6 +24,10 @@ import { LpSolverTestComponent } from './lp-solver-test/lp-solver-test.component
 import {MarkdownModule} from 'ngx-markdown';
 import { ListeJeuxComponent } from './liste-jeux/liste-jeux.component';
 import { DetailJeuComponent } from './detail-jeu/detail-jeu.component';
+import {TableModule} from "primeng/table";
+import {CardModule} from "primeng/card";
+import {RatingModule} from "primeng/rating";
+import {ButtonModule} from "primeng/button";
 
 registerLocaleData(localeFr, 'fr');
 
@@ -47,7 +51,11 @@ registerLocaleData(localeFr, 'fr');
     HttpClientModule,
     AccordionModule,
     MenuModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TableModule,
+    CardModule,
+    RatingModule,
+    ButtonModule
 
   ],
   providers: [AuthentificationService, MessageService,
