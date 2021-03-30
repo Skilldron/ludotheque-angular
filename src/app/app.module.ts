@@ -14,12 +14,15 @@ import {MessageService} from 'primeng/api';
 import {registerLocaleData} from '@angular/common';
 import {MomentModule} from 'ngx-moment';
 import 'moment/locale/fr';
+import {AccordionModule} from 'primeng/accordion';
+import {MenuModule} from 'primeng/menu';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {JwtInterceptorService} from './_services/jwt-interceptor.service';
 import { ProfileComponent } from './profile/profile.component';
 import {UserService} from './_services/user.service';
 import { LpSolverTestComponent } from './lp-solver-test/lp-solver-test.component';
 import {MarkdownModule} from 'ngx-markdown';
+import { ListeJeuxComponent } from './liste-jeux/liste-jeux.component';
 
 registerLocaleData(localeFr, 'fr');
 
@@ -28,7 +31,8 @@ registerLocaleData(localeFr, 'fr');
     AppComponent,
     LoginComponent,
     ProfileComponent,
-    LpSolverTestComponent
+    LpSolverTestComponent,
+    ListeJeuxComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +43,8 @@ registerLocaleData(localeFr, 'fr');
     MessagesModule,
     ToastModule,
     HttpClientModule,
+    AccordionModule,
+    MenuModule,
     ReactiveFormsModule
   ],
   providers: [AuthentificationService, MessageService,
