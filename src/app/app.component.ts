@@ -38,8 +38,8 @@ export class AppComponent implements OnInit {
         this.items = [
           {label: 'Mafia', icon: 'pi pi-fw pi-home'},
           {label: 'Connexion', icon: 'pi pi-fw pi-tag', routerLink: 'login'},
-          {label: 'Inscription', icon: 'pi pi-fw pi-pencil'},
-          {label: 'Liste-jeux', icon: 'pi pi-fw pi-desktop', routerLink: 'liste-jeux/:id'}
+          {label: 'Inscription', icon: 'pi pi-fw pi-pencil', routerLink: 'register'},
+          {label: 'Liste-jeux', icon: 'pi pi-fw pi-desktop', routerLink: 'liste-jeux'}
 
         ];
       }else{
@@ -48,7 +48,7 @@ export class AppComponent implements OnInit {
           {label: 'Déconnexion', icon: 'pi pi-fw pi-times', command: () => this.logout()},
           {label: 'Profil', icon: 'pi pi-fw pi-user', routerLink: 'profile'},
           {label: 'RO', icon: 'pi pi-fw pi-user', routerLink: 'ro'},
-          {label: 'Liste-jeux', icon: 'pi pi-fw pi-desktop', routerLink: 'liste-jeux/:id'}
+          {label: 'Liste-jeux', icon: 'pi pi-fw pi-desktop', routerLink: 'liste-jeux'}
         ];
       }
     }));
