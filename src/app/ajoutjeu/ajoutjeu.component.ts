@@ -110,6 +110,7 @@ export class AjoutjeuComponent implements OnInit {
   onSubmit(): void {
     this.form = {...this.form, ...this.ajoutjeu.value};
     this.loading = true;
+    const uid= this.authService.userValue.id
     this.http.post('http://localhost:8000/api/jeux', {
       nom: this.form.nom,
       description: this.form.description,

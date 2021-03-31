@@ -8,6 +8,7 @@ import {DetailJeuComponent} from './detail-jeu/detail-jeu.component';
 import {RegisterComponent} from './register/register.component';
 import {AjoutjeuComponent} from './ajoutjeu/ajoutjeu.component';
 import {AjoutcommentairesComponent} from "./ajoutcommentaires/ajoutcommentaires.component";
+import {EditprofileComponent} from "./editprofile/editprofile.component";
 
 
 const routes: Routes = [
@@ -18,7 +19,9 @@ const routes: Routes = [
   {path: 'liste-jeux/:id', component: DetailJeuComponent},
   {path: 'ajoutjeu', component: AjoutjeuComponent},
   {path: 'ajoutcommentaires', component: AjoutcommentairesComponent},
-  {path: 'register', component: RegisterComponent}
+  {path: 'register', component: RegisterComponent},
+  {path: 'editprofile', component: EditprofileComponent},
+
 ];
 
 @NgModule({

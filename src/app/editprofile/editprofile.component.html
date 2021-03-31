@@ -1,0 +1,11 @@
+
+<div *ngIf="authService.isLoggedIn$ | async">
+  <form [formGroup]="editprofile" (ngSubmit)="onSubmit()">
+    Pseudo :<input type="text" formControlName="pseudo" /><br>
+    nom:<input type="text" formControlName="nom" /><br>
+    Prenom :<input type="text" formControlName="prenom" /><br>
+    email :<input type="text" formControlName="email" /><br>
+
+    <button [disabled]="!editprofile.valid">sauvegarder les modifications</button>
+  </form>
+</div>
