@@ -18,7 +18,6 @@ export class ListeJeuxComponent implements OnInit {
   ngOnInit(): void {
     const jeux = [];
     this.jeuxService.getJeux().subscribe(str => jeux.push(str), noop, () => this.jeux$ = of(jeux[0]));
-    console.log(jeux);
   }
 
   onTri(): void {

@@ -24,4 +24,11 @@ export class UserService {
         catchError(err => throwError(err))
       );
   }
+
+  getNomProfile(id: number): Observable<any> {
+    return this.http.get<any>(environment.apiUrl + `/users/${id}`, httpOptions).pipe(
+      map(rep => rep.data.item),
+      catchError(err => throwError(err))
+    );
+  }
 }
