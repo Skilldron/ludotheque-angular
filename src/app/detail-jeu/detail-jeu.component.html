@@ -14,6 +14,31 @@
   <p><b>Age : </b>{{jeu.age}}</p>
   <p><b>Poids : </b>{{jeu.poids}}</p>
   <p><b>Durée : </b>{{jeu.duree}}</p>
+
   <app-ajoutcommentaires [jeu_id]=jeu.id.toString()></app-ajoutcommentaires>
+
+    <h3>Commentaires : </h3>
+    <div *ngFor="let commentaire of jeu.commentaires" class="card">
+      <div>
+        <div class="p-grid nested-grid test">
+          <div class="p-col-1">
+            <div class="box box-stretched p-d-flex p-jc-center"><p-avatar label="P" size="xlarge" class="pp"></p-avatar></div>
+          </div>
+          <div class="p-col-8">
+            <div class="p-grid">
+              <div class="p-col-12">
+                <div class="box"><p><b style="padding-right:10px">{{commentaire.user_id}}</b><small>il y a : {{commentaire.date_com | amTimeAgo:true}}</small></p></div>
+              </div>
+              <div class="p-col-12">
+                <div class="box">{{commentaire.commentaire}}</div>
+              </div>
+              <div class="p-col-12">
+                <div class="box"><p-rating [ngModel]="commentaire.note" readonly="true" [cancel]="false"></p-rating></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 </div>
 
