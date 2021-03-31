@@ -37,6 +37,7 @@ import { AjoutcommentairesComponent } from './ajoutcommentaires/ajoutcommentaire
 import {AvatarModule} from 'primeng/avatar';
 import {EditprofileComponent} from "./editprofile/editprofile.component";
 import { AchatjeuComponent } from './achatjeu/achatjeu.component';
+import {InputTextModule} from "primeng/inputtext";
 
 
 registerLocaleData(localeFr, 'fr');
@@ -77,7 +78,8 @@ registerLocaleData(localeFr, 'fr');
     MenuModule,
     TabMenuModule,
     AvatarModule,
-    FormsModule
+    FormsModule,
+    InputTextModule
   ],
   providers: [DatePipe, AuthentificationService, MessageService,
     {provide: LOCALE_ID, useValue: 'fr-FR'},

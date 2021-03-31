@@ -6,21 +6,49 @@
 
 <h1>Inscription :</h1>
 
-<div id="container">
+<div id="container" class="p-d-flex p-jc-center">
 
-
-  <form [formGroup]="register" (ngSubmit)="onSubmit()">
-    Nom :<input type="text" formControlName="nom" /><br>
-    Prénom :<input type="text" formControlName="prenom" /><br>
-    Pseudo :<input type="text" formControlName="pseudo" /><br>
-    Email :<input type="text" formControlName="email" /><br>
-    Mot de passe (au moins 6 caracteres) :<input type="password" formControlName="password" />
-    Retapez votre mot-de-passe :<input type="password" formControlName="confirmPass" />
-    <button [disabled]="!register.valid">S'enregistrer</button>
-  </form>
-
-
-
+  <div class="p-jc-center" style="margin-top:7%;margin-bottom:12%; padding:50px; border:solid 1px; border-radius:20px;">
+    <form [formGroup]="register" (ngSubmit)="onSubmit()">
+      <div class="p-field p-grid">
+        <label for="nom" class="p-sr-only">Nom</label>
+        <div class="p-col">
+          <input id="nom" type="text" pInputText formControlName="nom" placeholder="Nom">
+        </div>
+      </div>
+      <div class="p-field p-grid">
+        <label for="prenom" class="p-sr-only">Prénom</label>
+        <div class="p-col">
+          <input id="prenom" type="text" pInputText formControlName="prenom" placeholder="prenom">
+        </div>
+      </div>
+      <div class="p-field p-grid">
+        <label for="pseudo" class="p-sr-only">Pseudo</label>
+        <div class="p-col">
+          <input id="pseudo" type="text" pInputText formControlName="pseudo" placeholder="Pseudo">
+        </div>
+      </div>
+        <div class="p-field p-grid">
+          <label for="email" class="p-sr-only">Email</label>
+          <div class="p-col">
+            <input id="email" type="text" pInputText formControlName="email" placeholder="Email">
+          </div>
+        </div>
+      <div class="p-field p-grid">
+        <label for="password" class="p-sr-only">Mot de passe</label>
+        <div class="p-col">
+          <input id="password" type="password" pInputText formControlName="password" placeholder="Mot de passe">
+        </div>
+      </div>
+      <div class="p-field p-grid">
+        <label for="passwordverif" class="p-sr-only">Retapez le mot de passe</label>
+        <div class="p-col">
+          <input id="passwordverif" type="password" pInputText formControlName="confirmPass" placeholder="Retapez le mot de passe">
+        </div>
+      </div>
+      <button pButton type="submit" label="S'enregistrer" [disabled]="!register.valid"></button>
+    </form>
+  </div>
 </div>
 
 

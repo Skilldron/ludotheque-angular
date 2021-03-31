@@ -1,6 +1,5 @@
 
 <h1>Liste des jeux :</h1>
-<div id="container">
 
 <form [formGroup]="agemax" (ngSubmit)="onFiltre()">
   Trier par age :<input type="string" formControlName="age" />
@@ -13,20 +12,21 @@
 
 Trier par nom :<p-button class="bouton" icon="pi pi-sort-alpha-down" (click)="onTri()"></p-button>
 Trier par note :<p-button class="bouton" icon="pi pi-sort-alpha-down" (click)="onTrinote()"></p-button>
-<div class="p-d-flex p-jc-center" appCardBorder *ngFor="let jeu of (jeux$ | async) ">
-  <p-card>
-    <div class="p-d-flex p-jc-center title">
-      <i class="pi pi-calendar p-d-flex p-ai-center calendar"></i>
-      <h1><span>{{jeu.nom}}</span></h1>
-    </div>
-    <div class="p-text-center body">
-      <img class="p-shadow-2 image" [src]="jeu.url_media" alt="affiche darkknight"/>
-      <div class="product-name tilte-film">Thème :{{jeu.theme_id.nom}}</div>
-      <div class="product-description">Durée :{{jeu.duree}}</div>
-      <div class="product-description">Age minimum requis :{{jeu.age}}</div>
-      <div class="product-description">Nombre de joueurs minimum :{{jeu.nombre_joueurs}}</div>
-      <p-button class="bouton" icon="pi pi-eye" [routerLink]="['/liste-jeux' , jeu.id]"></p-button>
-    </div>
-  </p-card>
-</div>
+<div class="p-d-flex p-jc-center p-grid" style="margin-top: 2%;">
+  <div class="p-d-flex p-jc-center" style="width:35%;height:700px;padding: 20px;" *ngFor="let jeu of (jeux$ | async)">
+    <p-card>
+      <div class="p-d-flex p-jc-center title">
+        <i class="pi pi-calendar p-d-flex p-ai-center calendar"></i>
+        <h1><span>{{jeu.nom}}</span></h1>
+      </div>
+      <div class="p-text-center body">
+        <img class="p-shadow-2 image" [src]="jeu.url_media" alt="affiche darkknight"/>
+        <div class="product-name tilte-film">Thème :{{jeu.theme_id.nom}}</div>
+        <div class="product-description">Durée :{{jeu.duree}}</div>
+        <div class="product-description">Age minimum requis :{{jeu.age}}</div>
+        <div class="product-description">Nombre de joueurs minimum :{{jeu.nombre_joueurs}}</div>
+        <p-button class="bouton" icon="pi pi-eye" [routerLink]="['/liste-jeux' , jeu.id]"></p-button>
+      </div>
+    </p-card>
+  </div>
 </div>

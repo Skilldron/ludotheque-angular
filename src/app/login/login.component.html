@@ -5,15 +5,19 @@
 <h1>Connexion :</h1>
 <div id="container">
 
-
-  <form [formGroup]="formulaire" (ngSubmit)="onSubmit()">
-    Email : <input type="text" formControlName="email"><br>
-    Mot de passe : <input type="password" formControlName="password"><br>
-    <button [disabled]="!formulaire.valid">Valide</button>
-  </form>
-
-
-
+  <div style="padding-top:20%;">
+    <form class="p-jc-center p-ac-center" [formGroup]="formulaire" (ngSubmit)="onSubmit()">
+      <div class="p-inputgroup p-jc-center">
+        <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+        <input type="text" formControlName="email"><br>
+      </div>
+      <div class="p-inputgroup p-jc-center">
+        <span class="p-inputgroup-addon"><i class="pi pi-lock"></i></span>
+        <input type="password" formControlName="password"><br>
+      </div>
+      <button style="margin-top:10px;" pButton type="submit" label="Valide" [disabled]="!formulaire.valid"></button>
+    </form>
+  </div>
 </div>
 
 
