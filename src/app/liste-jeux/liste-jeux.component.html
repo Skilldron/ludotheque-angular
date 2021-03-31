@@ -4,9 +4,13 @@
   Trier par age :<input type="string" formControlName="age" />
   <p-button type="submit" class="bouton" icon="pi pi-sort-numeric-down-alt"></p-button>
 </form>
+<form [formGroup]="nbjmax" (ngSubmit)="onJoueur()">
+  Trier par nombres de joueurs  :<input type="string" formControlName="nbj" />
+  <p-button type="submit" class="bouton" icon="pi pi-sort-numeric-down-alt"></p-button>
+</form>
 
 Trier par nom :<p-button class="bouton" icon="pi pi-sort-alpha-down" (click)="onTri()"></p-button>
-
+Trier par note :<p-button class="bouton" icon="pi pi-sort-alpha-down" (click)="onTrinote()"></p-button>
 <div class="p-d-flex p-jc-center" appCardBorder *ngFor="let jeu of (jeux$ | async) ">
   <p-card>
     <div class="p-d-flex p-jc-center title">

@@ -56,5 +56,32 @@ export class JeuxService {
         }),
       );
   }
+
+  getTrinote(): Observable<any> {
+     const params = `?sort=note`;
+    const url = `http://localhost:8000/api/jeux${params}`;
+    return this.http.get<any>(url, this.httpOptions)
+      .pipe(
+        map(res => res.data.item),
+        catchError(err => {
+          console.log('Erreur http : ', err);
+          return of([]);
+        }),
+      );
+  }
+
+  getNbj(nbj?: string): Observable<any> {
+    const params = `?nbJoueurs=${nbj}`;
+    const url = `http://localhost:8000/api/jeux${params}`;
+    return this.http.get<any>(url, this.httpOptions)
+      .pipe(
+        map(res => res.data.item),
+        catchError(err => {
+          console.log('Erreur http : ', err);
+          return of([]);
+        }),
+      );
+  }
+
 }
 
