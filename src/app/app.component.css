@@ -16,14 +16,7 @@ header{
 
 
 
-footer {
-  bottom: auto;
-  width: 100%;
-  text-align: center;
-  background: -webkit-gradient(linear, left top, right top, from(dimgray), to(darkgray));
-  background: linear-gradient(to right, darkgray, dimgray);
-  color: white;
-}
+
 
 
 

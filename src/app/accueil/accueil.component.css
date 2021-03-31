@@ -8,3 +8,18 @@ h1 {
   background: white;
   margin: 0 auto;
 }
+
+.accueil div img {
+  -webkit-transform: scale(1.25);
+  transform: scale(1.25);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+  margin : auto;
+  Display:flex;
+  padding: 100px;
+}
+.accueil div:hover img {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+
+}

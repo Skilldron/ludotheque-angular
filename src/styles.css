@@ -8,8 +8,7 @@ p-tabmenuitem p-menuitem-link{
 }
 
 body{
-  background: #f9f9fa;
-}
+  background: #f9f9fa;}
 
 
 
@@ -17,4 +16,14 @@ body{
 h1{
   text-align: center;
 color: #6c757d;
+}
+
+
+footer {
+  bottom: auto;
+  width: 100%;
+  text-align: center;
+  background: -webkit-gradient(linear, left top, right top, from(dimgray), to(darkgray));
+  background: linear-gradient(to right, darkgray, dimgray);
+  color: white;
 }
