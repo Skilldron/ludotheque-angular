@@ -1,5 +1,7 @@
-<form [formGroup]="commentaires" (ngSubmit)="onSubmit()">
+<div *ngIf="authService.isLoggedIn$ | async">
+  <form [formGroup]="commentaires" (ngSubmit)="onSubmit()">
   Commentaire :<input type="text" formControlName="commentaire" /><br>
   Note(entier de 1 a 5) :<input type="text" formControlName="note" /><br>
   <button [disabled]="!commentaire.valid">Envoyer le commentaire</button>
 </form>
+</div>

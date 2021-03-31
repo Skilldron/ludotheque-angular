@@ -32,7 +32,7 @@ export class AjoutcommentairesComponent implements OnInit {
   });
 
 
-  constructor(private messageService: MessageService, private authService: AuthentificationService, private router: Router,
+  constructor(private messageService: MessageService, public authService: AuthentificationService, private router: Router,
               private route: ActivatedRoute, private http: HttpClient, private datePipe: DatePipe) {
   }
   ngOnInit(): void {
