@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {JeuxService} from '../jeux.service';
 import {ActivatedRoute} from '@angular/router';
 import {Observable, of} from 'rxjs';
-import {catchError, map} from "rxjs/operators";
-import {UserService} from "../_services/user.service";
+import {catchError, map} from 'rxjs/operators';
+import {UserService} from '../_services/user.service';
 
 @Component({
   selector: 'app-detail-jeu',
@@ -12,15 +12,12 @@ import {UserService} from "../_services/user.service";
 })
 export class DetailJeuComponent implements OnInit {
   jeu$: Observable<any>;
-  commentaire: any[];
-  userCommentaire$: Observable<any>;
   id = +this.route.snapshot.paramMap.get('id');
 
   constructor(private userService: UserService, private jeuxService: JeuxService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.jeu$ = this.jeuxService.getJeu(this.id);
-    // this.userCommentaire$ = this.userService.getNomProfile();
   }
 
 }

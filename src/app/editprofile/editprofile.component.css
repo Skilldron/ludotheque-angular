@@ -1,17 +1,10 @@
-form{
-  text-align: center;
-}
-
-
-
-h1{
-  text-align: center;
-}
-
-
 #container{
   height: 750px;
   width: 80%;
   background: white;
   margin: 0 auto;
+}
+
+form{
+  text-align: center;
 }

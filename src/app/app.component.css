@@ -1,1 +1,36 @@
 
+header{
+  background-color: mediumspringgreen;
+}
+
+
+#container{
+  height: 750px;
+  width: 80%;
+  background: white;
+  margin: 0 auto;
+}
+
+
+
+
+
+
+footer {
+  bottom: auto;
+  width: 100%;
+  text-align: center;
+  background: -webkit-gradient(linear, left top, right top, from(dimgray), to(darkgray));
+  background: linear-gradient(to right, darkgray, dimgray);
+  color: white;
+}
+
+
+
+
+
+
+
+
+
+
