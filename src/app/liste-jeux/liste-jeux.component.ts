@@ -19,6 +19,9 @@ export class ListeJeuxComponent implements OnInit {
     age: new FormControl(), });
   error = '';
 
+  nbjmax = new FormGroup({
+    nbj: new FormControl(), });
+
   constructor(private jeuxService: JeuxService) {
   }
 
@@ -37,8 +40,17 @@ export class ListeJeuxComponent implements OnInit {
     this.jeux$ = this.jeuxService.getAge(this.agemax.value.age);
   }
 
+  onJoueur(): void{
+    console.log(this.nbjmax.value);
+    this.jeux$ = this.jeuxService.getNbj(this.nbjmax.value.nbj);
+  }
+
   onTri(): void {
     this.jeux$ = this.jeuxService.getJeux(1);
+
+  }
+  onTrinote(): void {
+    this.jeux$ = this.jeuxService.getTrinote();
 
   }
 }
