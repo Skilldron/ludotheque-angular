@@ -8,6 +8,7 @@ import {AccordionModule} from 'primeng/accordion';
 import {MenuItem} from 'primeng/api';
 import {LoginComponent} from './login/login.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+
 import {AuthentificationService} from './_services/authentification.service';
 import {MessagesModule} from 'primeng/messages';
 import {ToastModule} from 'primeng/toast';
@@ -33,7 +34,7 @@ import {TabMenuModule} from 'primeng/tabmenu';
 import { RegisterComponent } from './register/register.component';
 import { AjoutjeuComponent } from './ajoutjeu/ajoutjeu.component';
 import { AjoutcommentairesComponent } from './ajoutcommentaires/ajoutcommentaires.component';
-import { EditprofileComponent } from './editprofile/editprofile.component';
+import {AvatarModule} from 'primeng/avatar';
 
 
 registerLocaleData(localeFr, 'fr');
@@ -48,8 +49,7 @@ registerLocaleData(localeFr, 'fr');
     DetailJeuComponent,
     RegisterComponent,
     AjoutjeuComponent,
-    AjoutcommentairesComponent,
-    EditprofileComponent
+    AjoutcommentairesComponent
   ],
   imports: [
     BrowserModule,
@@ -71,9 +71,11 @@ registerLocaleData(localeFr, 'fr');
     RatingModule,
     ButtonModule,
     MenuModule,
-    TabMenuModule
+    TabMenuModule,
+    AvatarModule,
+    FormsModule
   ],
-  providers: [DatePipe,AuthentificationService, MessageService,
+  providers: [DatePipe, AuthentificationService, MessageService,
     {provide: LOCALE_ID, useValue: 'fr-FR'},
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptorService, multi: true },
     UserService
