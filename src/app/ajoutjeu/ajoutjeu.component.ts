@@ -52,12 +52,19 @@ export class AjoutjeuComponent implements OnInit {
     duree: new FormControl('', [Validators.required,]),
     theme: new FormControl('', [Validators.required,]),
     editeur: new FormControl('', [Validators.required,])
-  });
+  }, {validators: this.checkContrainte});
+
 
   constructor(private messageService: MessageService, private authService: AuthentificationService, private router: Router,
               private route: ActivatedRoute, private http: HttpClient) {
   }
+  checkContrainte(group: FormGroup){
+    const nom = group.get('nom').value;
+    const age = group.get('age').value;
+    const nbjoueurs = group.get('nombre_joueurs').value;
 
+    return age >=1 && age <=16 && nom.length >= 10 && nom.length <= 100 && nbjoueurs>=2 && nbjoueurs<=8 ? null : { notSame: false };
+}
   ngOnInit(): void {
     this.returnUrl = this.route.snapshot.queryParams.returnUrl || '/';
   }
