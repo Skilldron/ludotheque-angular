@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {JeuxService} from '../jeux.service';
-import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';
 import {from, interval, noop, Observable, of, range} from 'rxjs';
-import {filter, last, map, take} from 'rxjs/operators';
-
+import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-liste-jeux',
@@ -12,21 +10,36 @@ import {filter, last, map, take} from 'rxjs/operators';
 })
 export class ListeJeuxComponent implements OnInit {
 
+  jeux;
+
   jeux$: Observable<any[]>;
+
+
+  agemax = new FormGroup({
+    age: new FormControl(), });
+  error = '';
 
   constructor(private jeuxService: JeuxService) {
   }
 
+  get age(): AbstractControl {
+    return this.age.get('age');
+  }
+
   ngOnInit(): void {
-    const jeux = [];
-    this.jeuxService.getJeux().subscribe(str => jeux.push(str), noop, () => this.jeux$ = of(jeux[0]));
+    this.jeux = [];
+    this.jeuxService.getJeux().subscribe(str => this.jeux.push(str), noop, () => this.jeux$ = of(this.jeux[0]));
+    console.log(this.jeux);
+  }
+
+  onFiltre(): void{
+    console.log(this.agemax.value);
+    this.jeux$ = this.jeuxService.getAge(this.agemax.value.age);
   }
 
   onTri(): void {
-    /*const jeux = [];*/
     this.jeux$ = this.jeuxService.getJeux(1);
-    /*this.jeuxService.getJeux().pipe(filter(x => x < jeux.age)).subscribe(str => jeux.push(str), noop, () => this.jeux$ = of(jeux[0]));
-    console.log('--------------- age ---------------');*/
+
   }
 }
 

@@ -39,6 +39,7 @@ export class RegisterComponent implements OnInit {
   }, {validators: this.checkPasswords});
 
 
+
   constructor(private messageService: MessageService, private authService: AuthentificationService, private router: Router,
               private route: ActivatedRoute, private http: HttpClient) {
   }

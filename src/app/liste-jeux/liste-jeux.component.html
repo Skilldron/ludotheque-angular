@@ -1,6 +1,10 @@
 <h1>Voici les différents jeux proposés</h1>
+<form [formGroup]="agemax" (ngSubmit)="onFiltre()">
+  Trier par age :<input type="string" formControlName="age" />
+  <p-button type="submit" class="bouton" icon="pi pi-sort-numeric-down-alt"></p-button>
+</form>
 
-<p-button class="bouton" icon="pi pi-sort-alpha-down" (click)="onTri()"></p-button>
+Trier par nom :<p-button class="bouton" icon="pi pi-sort-alpha-down" (click)="onTri()"></p-button>
 
 <div class="p-d-flex p-jc-center" appCardBorder *ngFor="let jeu of (jeux$ | async) ">
   <p-card>
@@ -18,9 +22,4 @@
     </div>
   </p-card>
 </div>
-
-<form [formGroup]="age" (ngSubmit)="onSubmit()">
-  Age max:<input type="text" formControlName="AgeMax" />
-  <p-button class="bouton" icon="pi pi-sort-numeric-down-alt" (click)="onTri()"></p-button>
-</form>
 
