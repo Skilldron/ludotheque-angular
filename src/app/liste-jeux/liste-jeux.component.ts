@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {JeuxService} from '../jeux.service';
 import {noop, Observable, of} from 'rxjs';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-liste-jeux',
@@ -24,4 +25,5 @@ export class ListeJeuxComponent implements OnInit {
   onTri(): void {
     this.jeux$ = this.jeuxService.getJeux(1);
   }
+
 }
