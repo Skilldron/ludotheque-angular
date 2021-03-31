@@ -14,7 +14,11 @@
   <p><b>Age : </b>{{jeu.age}}</p>
   <p><b>Poids : </b>{{jeu.poids}}</p>
   <p><b>Durée : </b>{{jeu.duree}}</p>
-
+  <div><b>Mecaniques : </b>
+  <ul>
+    <li *ngFor="let mecanique of jeu.mecaniques"><p>{{mecanique.nom}}</p></li>
+  </ul>
+  </div>
   <app-ajoutcommentaires [jeu_id]=jeu.id.toString()></app-ajoutcommentaires>
 
     <h3>Commentaires : </h3>
