@@ -8,7 +8,7 @@ import {AccordionModule} from 'primeng/accordion';
 import {MenuItem} from 'primeng/api';
 import {LoginComponent} from './login/login.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AuthentificationService} from './_services/authentification.service';
 import {MessagesModule} from 'primeng/messages';
 import {ToastModule} from 'primeng/toast';
@@ -32,6 +32,8 @@ import {RatingModule} from 'primeng/rating';
 
 import {TabMenuModule} from 'primeng/tabmenu';
 import { RegisterComponent } from './register/register.component';
+import {AvatarModule} from "primeng/avatar";
+import { DatePipe } from './pipe/date.pipe';
 
 
 registerLocaleData(localeFr, 'fr');
@@ -44,7 +46,8 @@ registerLocaleData(localeFr, 'fr');
     LpSolverTestComponent,
     ListeJeuxComponent,
     DetailJeuComponent,
-    RegisterComponent
+    RegisterComponent,
+    DatePipe
   ],
   imports: [
     BrowserModule,
@@ -65,7 +68,9 @@ registerLocaleData(localeFr, 'fr');
     RatingModule,
     ButtonModule,
     MenuModule,
-    TabMenuModule
+    TabMenuModule,
+    AvatarModule,
+    FormsModule
   ],
   providers: [AuthentificationService, MessageService,
     {provide: LOCALE_ID, useValue: 'fr-FR'},
