@@ -12,7 +12,7 @@ import {AuthentificationService} from './_services/authentification.service';
 import {MessagesModule} from 'primeng/messages';
 import {ToastModule} from 'primeng/toast';
 import {MessageService} from 'primeng/api';
-import {registerLocaleData} from '@angular/common';
+import {DatePipe, registerLocaleData} from '@angular/common';
 import {MomentModule} from 'ngx-moment';
 import 'moment/locale/fr';
 import {MenuModule} from 'primeng/menu';
@@ -32,6 +32,7 @@ import {RatingModule} from 'primeng/rating';
 import {TabMenuModule} from 'primeng/tabmenu';
 import { RegisterComponent } from './register/register.component';
 import { AjoutjeuComponent } from './ajoutjeu/ajoutjeu.component';
+import { AjoutcommentairesComponent } from './ajoutcommentaires/ajoutcommentaires.component';
 
 
 registerLocaleData(localeFr, 'fr');
@@ -45,7 +46,8 @@ registerLocaleData(localeFr, 'fr');
     ListeJeuxComponent,
     DetailJeuComponent,
     RegisterComponent,
-    AjoutjeuComponent
+    AjoutjeuComponent,
+    AjoutcommentairesComponent
   ],
   imports: [
     BrowserModule,
@@ -69,7 +71,7 @@ registerLocaleData(localeFr, 'fr');
     MenuModule,
     TabMenuModule
   ],
-  providers: [AuthentificationService, MessageService,
+  providers: [DatePipe,AuthentificationService, MessageService,
     {provide: LOCALE_ID, useValue: 'fr-FR'},
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptorService, multi: true },
     UserService
