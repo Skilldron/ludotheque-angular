@@ -20,7 +20,6 @@ const routes: Routes = [
   {path: 'ajoutjeu', component: AjoutjeuComponent},
   {path: 'ajoutcommentaires', component: AjoutcommentairesComponent},
   {path: 'register', component: RegisterComponent},
-
   {path: 'editprofile', component: EditprofileComponent},
 
 ];
