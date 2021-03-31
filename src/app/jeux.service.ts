@@ -24,8 +24,24 @@ export class JeuxService {
 
   getJeux(sort?: number): Observable<any> {
     let params = '';
-    if (!!sort && sort === 1){
+    if (!!sort && sort === 1) {
       params = '?sort=nom&ordre=asc';
+    }
+    const url = `http://localhost:8000/api/jeux${params}`;
+    return this.http.get<any>(url, this.httpOptions)
+      .pipe(
+        map(res => res.data.item),
+        catchError(err => {
+          console.log('Erreur http : ', err);
+          return of([]);
+        }),
+      );
+  }
+
+  getAge(age?: string ): Observable<any> {
+    let params = '';
+    if (!!age) {
+      params = `?sort=age&age<=${age}`;
     }
     const url = `http://localhost:8000/api/jeux${params}`;
     return this.http.get<any>(url, this.httpOptions)

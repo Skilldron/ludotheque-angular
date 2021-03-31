@@ -23,7 +23,7 @@ export class RegisterComponent implements OnInit {
     email: null,
     password: null,
     pseudo: null,
-    password2:null
+    password2: null
   };
   loading = false;
   returnUrl: string;
@@ -35,8 +35,8 @@ export class RegisterComponent implements OnInit {
     nom: new FormControl('', [Validators.required]),
     prenom: new FormControl('', [Validators.required]),
     pseudo: new FormControl('', [Validators.required]),
-    confirmPass: new FormControl('', [Validators.required,])
-  },{validators: this.checkPasswords});
+    confirmPass: new FormControl('', [Validators.required, ])
+  }, { validators: this.checkPasswords});
 
   constructor(private messageService: MessageService, private authService: AuthentificationService, private router: Router,
               private route: ActivatedRoute, private http: HttpClient) {

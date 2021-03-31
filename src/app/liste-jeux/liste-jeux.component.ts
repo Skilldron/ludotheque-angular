@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {JeuxService} from '../jeux.service';
 import {noop, Observable, of} from 'rxjs';
+import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';
+import {filter, last, map, take, tap} from 'rxjs/operators';
+import {ActivatedRoute, Router} from '@angular/router';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 @Component({
   selector: 'app-liste-jeux',
@@ -8,20 +12,33 @@ import {noop, Observable, of} from 'rxjs';
   styleUrls: ['./liste-jeux.component.css']
 })
 export class ListeJeuxComponent implements OnInit {
-
+  form: any = {
+    age: null
+  };
+  jeux;
   jeux$: Observable<any[]>;
-  valTri = '';
+  agemax = new FormGroup({
+    age: new FormControl(), });
+  loading = false;
+  returnUrl: string;
+  error = '';
 
   constructor(private jeuxService: JeuxService) {
   }
-
+  get age(): AbstractControl {
+    return this.age.get('age');
+  }
   ngOnInit(): void {
-    const jeux = [];
-    this.jeuxService.getJeux().subscribe(str => jeux.push(str), noop, () => this.jeux$ = of(jeux[0]));
-    console.log(jeux);
+    this.jeux = [];
+    this.jeuxService.getJeux().subscribe(str => this.jeux.push(str), noop, () => this.jeux$ = of(this.jeux[0]));
+    console.log(this.jeux);
+  }
+
+  onFiltre(): void{
+    this.jeux$ =this.jeuxService.getAge(this.form.age);
   }
 
   onTri(): void {
     this.jeux$ = this.jeuxService.getJeux(1);
-  }
+    }
 }
