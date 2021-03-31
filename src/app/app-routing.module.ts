@@ -9,9 +9,11 @@ import {RegisterComponent} from './register/register.component';
 import {AjoutjeuComponent} from './ajoutjeu/ajoutjeu.component';
 import {AjoutcommentairesComponent} from "./ajoutcommentaires/ajoutcommentaires.component";
 import {EditprofileComponent} from "./editprofile/editprofile.component";
+import {AccueilComponent} from './accueil/accueil.component';
 
 
 const routes: Routes = [
+  {path: '', component: AccueilComponent},
   {path: 'login', component: LoginComponent},
   {path: 'liste-jeux', component: ListeJeuxComponent },
   {path: 'profile', component: ProfileComponent},

@@ -3,6 +3,9 @@ import * as moment from 'moment';
 import {MenuItem, MessageService} from 'primeng/api';
 import {AuthentificationService} from './_services/authentification.service';
 import {Router} from '@angular/router';
+import {noop, Observable, of} from 'rxjs';
+import {JeuxService} from './jeux.service';
+import {take} from 'rxjs/operators';
 
 
 // @ts-ignore
@@ -15,8 +18,7 @@ export class AppComponent implements OnInit {
   title = 'ludotheque-client';
   items: MenuItem[];
 
-  constructor(public messageService: MessageService, public authService: AuthentificationService, private router: Router) {
-  }
+  constructor(public messageService: MessageService, public authService: AuthentificationService, private router: Router) {}
 
   show(): void {
     const now = moment().format('LL');
@@ -36,7 +38,7 @@ export class AppComponent implements OnInit {
     (this.authService.isLoggedOut$.subscribe(login => {
       if (login){
         this.items = [
-          {label: 'Mafia', icon: 'pi pi-fw pi-home'},
+          {label: 'Accueil', icon: 'pi pi-fw pi-home', routerLink: '/'},
           {label: 'Connexion', icon: 'pi pi-fw pi-tag', routerLink: 'login'},
           {label: 'Inscription', icon: 'pi pi-fw pi-pencil', routerLink: 'register'},
           {label: 'Liste-jeux', icon: 'pi pi-fw pi-desktop', routerLink: 'liste-jeux'}
@@ -44,11 +46,13 @@ export class AppComponent implements OnInit {
         ];
       }else{
         this.items = [
-          {label: 'Mafia', icon: 'pi pi-fw pi-home', routerLink: 'login'},
+          {label: 'Accueil', icon: 'pi pi-fw pi-home', routerLink: '/'},
           {label: 'Déconnexion', icon: 'pi pi-fw pi-times', command: () => this.logout()},
           {label: 'Profil', icon: 'pi pi-fw pi-user', routerLink: 'profile'},
           {label: 'RO', icon: 'pi pi-fw pi-user', routerLink: 'ro'},
-          {label: 'Liste-jeux', icon: 'pi pi-fw pi-desktop', routerLink: 'liste-jeux'}
+          {label: 'Liste-jeux', icon: 'pi pi-fw pi-desktop', routerLink: 'liste-jeux'},
+          {label: 'Ajout-jeux', icon: 'pi pi-fw pi-desktop', routerLink: 'ajoutjeu'}
+
         ];
       }
     }));
