@@ -15,6 +15,7 @@
   <p><b>Poids : </b>{{jeu.poids}}</p>
   <p><b>Durée : </b>{{jeu.duree}}</p>
 
+  <app-achatjeu [id_jeu]=jeu.id.toString()></app-achatjeu>
   <app-ajoutcommentaires [jeu_id]=jeu.id.toString()></app-ajoutcommentaires>
 
     <h3>Commentaires : </h3>

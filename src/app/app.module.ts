@@ -36,6 +36,7 @@ import { AjoutjeuComponent } from './ajoutjeu/ajoutjeu.component';
 import { AjoutcommentairesComponent } from './ajoutcommentaires/ajoutcommentaires.component';
 import {AvatarModule} from 'primeng/avatar';
 import {EditprofileComponent} from "./editprofile/editprofile.component";
+import { AchatjeuComponent } from './achatjeu/achatjeu.component';
 
 
 registerLocaleData(localeFr, 'fr');
@@ -51,7 +52,8 @@ registerLocaleData(localeFr, 'fr');
     RegisterComponent,
     AjoutjeuComponent,
     AjoutcommentairesComponent,
-    EditprofileComponent
+    EditprofileComponent,
+    AchatjeuComponent,
   ],
   imports: [
     BrowserModule,

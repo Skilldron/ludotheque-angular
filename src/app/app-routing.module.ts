@@ -7,8 +7,9 @@ import {ListeJeuxComponent} from './liste-jeux/liste-jeux.component';
 import {DetailJeuComponent} from './detail-jeu/detail-jeu.component';
 import {RegisterComponent} from './register/register.component';
 import {AjoutjeuComponent} from './ajoutjeu/ajoutjeu.component';
-import {AjoutcommentairesComponent} from "./ajoutcommentaires/ajoutcommentaires.component";
-import {EditprofileComponent} from "./editprofile/editprofile.component";
+import {AjoutcommentairesComponent} from './ajoutcommentaires/ajoutcommentaires.component';
+import {EditprofileComponent} from './editprofile/editprofile.component';
+import {AchatjeuComponent} from './achatjeu/achatjeu.component';
 
 
 const routes: Routes = [
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path: 'ajoutcommentaires', component: AjoutcommentairesComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'editprofile', component: EditprofileComponent},
+  {path: 'achatjeu', component: AchatjeuComponent}
 
 ];
 

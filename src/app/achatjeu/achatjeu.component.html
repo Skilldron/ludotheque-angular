@@ -1,0 +1,10 @@
+<hr>
+<form [formGroup]="achatjeu" (ngSubmit)="onSubmit()">
+  prix :<input type="number" formControlName="prix" /><br>
+  lieu :<input type="text" formControlName="lieu" /><br>
+  date :<input type="date" formControlName="date" /><br>
+
+
+  <button [disabled]="!achatjeu.valid">Ajouter à mes achats</button>
+</form>
+<hr>
