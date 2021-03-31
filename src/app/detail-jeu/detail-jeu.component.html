@@ -5,6 +5,7 @@
   <img class="tImage p-text-center" src="{{jeu.url_media}}" alt="image du jeu">
   <p><b>Description :</b> {{jeu.description}}</p>
   <p><b>Thème :</b> {{jeu.theme_id.nom}}</p>
+  {{jeu.id}}
   <p><b>Règles : </b>{{jeu.regles}}</p>
   <p><b>Catégorie :</b> {{jeu.categorie}}</p>
   <p><b>Langue :</b> {{jeu.langue}}</p>
@@ -13,4 +14,6 @@
   <p><b>Age : </b>{{jeu.age}}</p>
   <p><b>Poids : </b>{{jeu.poids}}</p>
   <p><b>Durée : </b>{{jeu.duree}}</p>
+  <app-ajoutcommentaires [jeu_id]=jeu.id.toString()></app-ajoutcommentaires>
 </div>
+
