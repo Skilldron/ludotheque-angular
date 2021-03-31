@@ -14,8 +14,7 @@ const httpOptions = {
   styleUrls: ['./ajoutcommentaires.component.css']
 })
 export class AjoutcommentairesComponent implements OnInit {
-  @Input() jeu_id; // decorate the property with @Input()
-
+  @Input() jeu_id;
   form: any = {
   commentaire: null,
     note: null
