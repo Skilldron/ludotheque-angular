@@ -1,14 +1,13 @@
 import {LOCALE_ID, NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import localeFr from '@angular/common/locales/fr';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {AccordionModule} from 'primeng/accordion';
 import {MenuItem} from 'primeng/api';
 import {LoginComponent} from './login/login.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
-import {ReactiveFormsModule} from '@angular/forms';
 import {AuthentificationService} from './_services/authentification.service';
 import {MessagesModule} from 'primeng/messages';
 import {ToastModule} from 'primeng/toast';
@@ -32,6 +31,7 @@ import {RatingModule} from 'primeng/rating';
 
 import {TabMenuModule} from 'primeng/tabmenu';
 import { RegisterComponent } from './register/register.component';
+import { AjoutjeuComponent } from './ajoutjeu/ajoutjeu.component';
 
 
 registerLocaleData(localeFr, 'fr');
@@ -44,12 +44,14 @@ registerLocaleData(localeFr, 'fr');
     LpSolverTestComponent,
     ListeJeuxComponent,
     DetailJeuComponent,
-    RegisterComponent
+    RegisterComponent,
+    AjoutjeuComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MarkdownModule.forRoot(),
+    FormsModule,    // added here too
     AppRoutingModule,
     MomentModule,
     MessagesModule,

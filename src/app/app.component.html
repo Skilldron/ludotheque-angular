@@ -6,5 +6,5 @@
 <p-toast position="top-right" key="main"></p-toast>
 
 <button (click)="show()">test</button>
-
+<li *ngIf="authService.isLoggedIn$ | async"><a [routerLink]="['/ajoutjeu']">Ajouter un jeu</a></li>
 <router-outlet></router-outlet>
