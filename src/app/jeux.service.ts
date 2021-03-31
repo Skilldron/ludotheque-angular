@@ -27,6 +27,9 @@ export class JeuxService {
     if (!!sort && sort === 1){
       params = '?sort=nom&ordre=asc';
     }
+    if(!!sort && sort === -1){
+      params = '?sort=note&ordre=desc';
+    }
     const url = `http://localhost:8000/api/jeux${params}`;
     return this.http.get<any>(url, this.httpOptions)
       .pipe(

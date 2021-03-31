@@ -38,6 +38,7 @@ export class RegisterComponent implements OnInit {
     confirmPass: new FormControl('', [Validators.required, ])
   }, {validators: this.checkPasswords});
 
+
   constructor(private messageService: MessageService, private authService: AuthentificationService, private router: Router,
               private route: ActivatedRoute, private http: HttpClient) {
   }

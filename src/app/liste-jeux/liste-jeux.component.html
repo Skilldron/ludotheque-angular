@@ -19,3 +19,9 @@
 
   </p-card>
 </div>
+
+<form [formGroup]="age" (ngSubmit)="onSubmit()">
+  Age max:<input type="text" formControlName="AgeMax" />
+  <p-button class="bouton" icon="pi pi-sort-numeric-down-alt" (click)="onTri()"></p-button>
+</form>
+

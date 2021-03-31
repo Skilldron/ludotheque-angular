@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {JeuxService} from '../jeux.service';
-import {noop, Observable, of} from 'rxjs';
+import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';
+import {from, interval, noop, Observable, of, range} from 'rxjs';
+import {filter, last, map, take} from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-liste-jeux',
@@ -10,7 +13,6 @@ import {noop, Observable, of} from 'rxjs';
 export class ListeJeuxComponent implements OnInit {
 
   jeux$: Observable<any[]>;
-  valTri = '';
 
   constructor(private jeuxService: JeuxService) {
   }
@@ -18,10 +20,13 @@ export class ListeJeuxComponent implements OnInit {
   ngOnInit(): void {
     const jeux = [];
     this.jeuxService.getJeux().subscribe(str => jeux.push(str), noop, () => this.jeux$ = of(jeux[0]));
-    console.log(jeux);
   }
 
   onTri(): void {
+    /*const jeux = [];*/
     this.jeux$ = this.jeuxService.getJeux(1);
+    /*this.jeuxService.getJeux().pipe(filter(x => x < jeux.age)).subscribe(str => jeux.push(str), noop, () => this.jeux$ = of(jeux[0]));
+    console.log('--------------- age ---------------');*/
   }
 }
+
