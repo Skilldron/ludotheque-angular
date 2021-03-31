@@ -1,0 +1,16 @@
+<form [formGroup]="ajoutjeu" (ngSubmit)="onSubmit()">
+  Nom :<input type="text" formControlName="nom" /><br>
+  Description :<input type="text" formControlName="description" /><br>
+  theme :<input type="text" formControlName="theme" /><br>
+  editeur :<input type="text" formControlName="editeur" /><br>
+  langue :<input type="text" formControlName="langue" /><br>
+  age:<input type="text" formControlName="age" /><br>
+  poids :<input type="text" formControlName="poids" /><br>
+  Nombre de joueurs :<input type="text" formControlName="nombre_joueurs" /><br>
+  Categorie :<input type="text" formControlName="categorie" /><br>
+  duree :<input type="text" formControlName="duree" /><br>
+  Regle :<input type="text" formControlName="regles" /><br>
+
+  <button [disabled]="!ajoutjeu.valid">Enregistrer</button>
+</form>
+
