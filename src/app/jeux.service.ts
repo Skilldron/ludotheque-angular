@@ -41,7 +41,7 @@ export class JeuxService {
   getAge(age?: string ): Observable<any> {
     let params = '';
     if (!!age) {
-      params = `?sort=age&age<=${age}`;
+      params = `?age=${age}`;
     }
     const url = `http://localhost:8000/api/jeux${params}`;
     return this.http.get<any>(url, this.httpOptions)

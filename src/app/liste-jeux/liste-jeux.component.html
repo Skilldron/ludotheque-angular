@@ -1,6 +1,6 @@
 <h1>Voici les différents jeux proposés</h1>
 <form [formGroup]="agemax" (ngSubmit)="onFiltre()">
-  Trier par age :<input type="number" formControlName="age" />
+  Trier par age :<input type="string" formControlName="age" />
   <p-button type="submit" class="bouton" icon="pi pi-sort-numeric-down-alt"></p-button>
 </form>
 

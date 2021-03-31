@@ -12,22 +12,22 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
   styleUrls: ['./liste-jeux.component.css']
 })
 export class ListeJeuxComponent implements OnInit {
-  form: any = {
-    age: null
-  };
+
   jeux;
+
   jeux$: Observable<any[]>;
+
   agemax = new FormGroup({
     age: new FormControl(), });
-  loading = false;
-  returnUrl: string;
   error = '';
 
   constructor(private jeuxService: JeuxService) {
   }
+
   get age(): AbstractControl {
     return this.age.get('age');
   }
+
   ngOnInit(): void {
     this.jeux = [];
     this.jeuxService.getJeux().subscribe(str => this.jeux.push(str), noop, () => this.jeux$ = of(this.jeux[0]));
@@ -35,7 +35,8 @@ export class ListeJeuxComponent implements OnInit {
   }
 
   onFiltre(): void{
-    this.jeux$ =this.jeuxService.getAge(this.form.age);
+    console.log(this.agemax.value);
+    this.jeux$ = this.jeuxService.getAge(this.agemax.value.age);
   }
 
   onTri(): void {
